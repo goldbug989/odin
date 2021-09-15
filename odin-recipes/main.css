@@ -1,0 +1,31 @@
+html,div,body{
+    padding:0;
+    border:0;
+    margin:0;
+    box-sizing: border-box;
+  }
+  #recipe{
+    display:flex;
+    flex-direction: column;
+    flex-wrap:wrap;
+    justify-content: center;
+    /* no flex flow req'd using default */
+  
+    align-items: center;
+    /* here is the trick for above the fold use viewport height, vh */
+    height:100vh;
+    background-color:whitesmoke;
+    background-size:cover;
+    background-repeat:no-repeat;
+    border:10px solid red;
+  }
+  
+  p{
+    font-size: 1rem;
+    font-style: italic;
+    color:black;
+    text-align: center;
+    margin-left:25%;
+    margin-right:25%;
+  }
+  
