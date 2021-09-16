@@ -13,19 +13,28 @@ html,div,body{
   
     align-items: center;
     /* here is the trick for above the fold use viewport height, vh */
-    height:100vh;
+    /* height:100vh; */
     background-color:whitesmoke;
     background-size:cover;
     background-repeat:no-repeat;
     border:10px solid red;
   }
+
   
   p{
     font-size: 1rem;
     font-style: italic;
     color:black;
     text-align: center;
-    margin-left:25%;
-    margin-right:25%;
+    margin-left:30%;
+    margin-right:30%;
+  }
+
+  ol{
+      width:30%;
+  }
+
+  li{
+      margin-bottom:5px;
   }
   
