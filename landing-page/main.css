@@ -1,0 +1,54 @@
+html,body{
+    margin:0;
+    padding:0;
+}
+
+main{
+    margin:0 20%;
+}
+.hero{
+    display:flex;
+    flex-direction: column;
+    background-color:#1F2937;
+    color:#F9FAF8;
+}
+header{
+    margin:5px 20px;
+    display:flex;
+    justify-content: space-between;
+}
+.body{
+    margin:10%;
+    display:flex;
+}
+.signup{
+    width:50%;
+}
+.cards{
+    margin:20px 0;
+    display:flex;
+    flex-direction: column;
+}
+.card{
+    display:flex;
+    flex-direction:column;
+}
+.card-container{
+    display:flex;
+
+}
+#signup-img{
+    width:50%;
+}
+ul{
+    list-style:none;
+    display:flex;
+    gap:20px;
+}
+a{
+    text-decoration:none;
+    color:#E5E7EB;
+}
+a:hover{
+    color:rgb(216, 31, 102);
+}
