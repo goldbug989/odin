@@ -16,17 +16,37 @@ main{
     color:#F9FAF8;
 }
 header{
-    margin:5px 20px;
+    margin:5px 60px;
     display:flex;
     justify-content: space-between;
+    align-items:center;
+}
+.logo h3{
+    font-size:24px;
+    color:#f9faf8;
+}
+h2{
+    margin:0;
+    font-size:48px;
+    font-weight:bold;
+    color: #f9faf8;
+}
+#info-header{
+    font-size:36px; 
+    font-weight:bold; 
+    color:#1F2937;
 }
 .body{
-    margin:5% 10%;
+    margin: 60px 60px;
     display:flex;
-    gap:10px;
+    gap:20px;
 }
-.signup{
-    width:50%;
+.call-to-action{
+    
+}
+.signup p{
+    font-size:18px;
+    color:#E5E7EB;
 }
 .cards{
     margin:20px 40px;
@@ -55,6 +75,12 @@ header{
     padding:3% 25%;
     background-color: #E5E7EB;
 }
+blockquote{
+    font:36px;
+    font-weight:light;
+    font-style:italic;
+
+}
 figcaption{
     text-align:right;
 }
@@ -68,8 +94,15 @@ ul{
 }
 a{
     text-decoration:none;
+    font-size:18px;
     color:#E5E7EB;
 }
 a:hover{
     color:rgb(216, 31, 102);
+}
+button{
+    border:none;
+    border-radius:5px;
+    color:#f9faf8;
+    background-color:#3882f6;
 }
