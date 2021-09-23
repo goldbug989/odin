@@ -2,9 +2,12 @@ html,body{
     margin:0;
     padding:0;
 }
+body{
+    height:100vh;
+}
 
 main{
-    margin:0 20%;
+    margin:0 25%;
 }
 .hero{
     display:flex;
@@ -18,24 +21,42 @@ header{
     justify-content: space-between;
 }
 .body{
-    margin:10%;
+    margin:5% 10%;
     display:flex;
+    gap:10px;
 }
 .signup{
     width:50%;
 }
 .cards{
-    margin:20px 0;
+    margin:20px 40px;
     display:flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .card{
+    width:100px;
     display:flex;
     flex-direction:column;
+
+}
+.card-image{
+    width:100px;
+    height:100px;
+    border-radius: 7%;;
 }
 .card-container{
     display:flex;
+    gap:20px;
 
+}
+.quote{
+    padding:3% 25%;
+    background-color: #E5E7EB;
+}
+figcaption{
+    text-align:right;
 }
 #signup-img{
     width:50%;
