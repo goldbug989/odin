@@ -72,7 +72,7 @@ h2{
 
 }
 .quote{
-    padding:3% 25%;
+    padding:3% 10%;
     background-color: #E5E7EB;
 }
 blockquote{
@@ -105,4 +105,33 @@ button{
     border-radius:5px;
     color:#f9faf8;
     background-color:#3882f6;
+}
+.call-to-action{
+    margin:10% 5%;
+    padding: 5% 5%;
+    background-color: #3882f6;
+    color:#f9faf8;
+    border-radius: 5px;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    gap:70px;
+}
+.call-to-action-text{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+.call-to-action-text h3, .call-to-action-text p{
+    margin:0;
+}
+#signup-button{
+    border: 1px solid #f9faf8;
+}
+footer{
+    padding:15px 0;
+    background-color: #1F2937;
+    color:#E5E7EB;
+    text-align: center;
 }
