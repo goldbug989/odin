@@ -1,15 +1,9 @@
 //return computer choice
 function computerPlay() {
     let result = Math.floor(Math.random() * 3);
-<<<<<<< HEAD
     if (result === 1) return "ROCK";
     else if (result === 2) return "PAPER";
     else return "SCISSORS";
-=======
-    if (result === 1) return "rock";
-    else if (result === 2) return "paper";
-    else return "scissors";
->>>>>>> d05ced8409f122d61cf15005011b4461b4f0ea7e
 }
 //return player choice ..check for valid answer
 function getPlayerChoice() {
@@ -19,11 +13,7 @@ function getPlayerChoice() {
         //check choice
         if (choice.toUpperCase() === "ROCK" || choice.toUpperCase() === "PAPER" || choice.toUpperCase() === "SCISSORS") {
             validAnswer = true;
-<<<<<<< HEAD
             return choice.toUpperCase();
-=======
-            return choice;
->>>>>>> d05ced8409f122d61cf15005011b4461b4f0ea7e
         }
         else {
             alert("invalid entry..try again");
@@ -32,7 +22,6 @@ function getPlayerChoice() {
 }
 
 //play game
-<<<<<<< HEAD
 function playRound(computer, player) {
 
     if (computer === player) {
@@ -69,39 +58,8 @@ function game() {
     else if (count < 0) {
         winner = "computer";
     }
-    else {
-        winner = "tie game!";
-    }
     alert(`best of five winner is ${winner}!`);
 }
 
 //play game
 game();
-=======
-function playGame(computer, player) {
-
-    if (computer === player) {
-        return `tie game! both parties chose ${computer}`;
-    }
-    else if (computer === "ROCK" && player === "SCISSORS" || computer === "PAPER" && player === "ROCK" || computer === "SCISSORS" && player === "PAPER") {
-        return `computer wins! ${computer}(computer) beats ${player}(player)`;
-    }
-    else return `player wins! ${player}(player) beats ${computer}(computer)`;
-
-}
-
-function game() {
-    //init vars
-    let winner = "";
-    //play game 5 times and keep score
-    //report winner at end
-    alert(`best of five winner is ${winner}!`);
-}
-
-//get choices
-let comp = computerPlay();
-let playa = getPlayerChoice();
-//play game
-alert(playGame(comp, playa));
-
->>>>>>> d05ced8409f122d61cf15005011b4461b4f0ea7e
