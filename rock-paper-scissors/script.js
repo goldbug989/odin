@@ -51,33 +51,37 @@ function game() {
 
 
 function displayResults(result) {
+    //store score elements
+    let playerScore = document.querySelector("#playerScore");
+    let computerScore = document.querySelector("#computerScore");
+    //round result message
+    let msg = document.getElementById("round-result");
+    //covert scores
+    let playerTotal = parseInt(playerScore.textContent);
+    let computerTotal = parseInt(computerScore.textContent);
     console.log(result);
-    //create results div
-    let resultSpan = document.createElement("span");
 
     //if result =1 computer wins
     if (result > 0) {
-        resultSpan.textContent = "Computer Wins!!!"
+        computerTotal++;
+        msg.textContent = "COMPUTER WINS ROUND!";
+        computerScore.textContent = computerTotal;
     }
-    else if (result === 0) {
-        resultSpan.textContent = "Tie Game!!!";
+    else if (result < 0) {
+        playerTotal++;
+        msg.textContent = "PLAYER WINS ROUND!";
+        playerScore.textContent = playerTotal;
     }
     else {
-        resultSpan.textContent = "Player Wins!!";
+        msg.textContent = 'TIE GAME!';
     }
-    //add span to result container
-    let container = document.querySelector(".results");
-    container.appendChild(resultSpan);
+
 }
 
 
-function play(e, str) {
+function play(e) {
     //get playerChoice from btn clicked
     let playerChoice = e.target.textContent.toUpperCase();
-    //erase result container child span if results exist
-    if (document.querySelector(".results").firstElementChild) {
-        document.querySelector(".results").firstElementChild.remove();
-    }
     let computerChoice = computerPlay();
     let result = playRound(computerChoice, playerChoice);
     displayResults(result);

@@ -20,7 +20,18 @@ h2{
     justify-content: center;
     align-items: center;
     font-size:2em;
+    gap:50px;
 }
+
+#playerScore{
+    display:flex;
+    justify-content: center;
+}
+#computerScore{
+    display:flex;
+    justify-content: center;
+}
+
 button{
     width:100px;
     height:40px;
