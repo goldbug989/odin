@@ -11,43 +11,34 @@ function computerPlay() {
 function playRound(computer, player) {
 
     if (computer === player) {
-        //alert(`tie game! both parties chose ${computer}`);
         return 1;
     }
     else if ((computer === "ROCK" && player === "SCISSORS") || (computer === "PAPER" && player === "ROCK") || (computer === "SCISSORS" && player === "PAPER")) {
-        //alert(`computer wins! ${computer}(computer) beats ${player}(player)`);
         return -1;
     }
     else {
-        //alert(`player wins! ${player}(player) beats ${computer}(computer)`);
         return 0;
     }
 }
 
+function endGame(str) {
+    let winnerMessage = document.getElementById("endgame");
+    let player = document.getElementById('playerScore');
+    let computer = document.getElementById('computerScore');
+    let playerScore = parseInt(player.textContent);
+    let computerScore = parseInt(computer.textContent);
 
-function game() {
-    //initialize variabless
-    let count = 0;
-    let winner;
-    //play game 5 times and keep score
-    for (let i = 0; i < 5; i++) {
-        //get choices
-        let comp = computerPlay();
-        let playa = getPlayerChoice();
-        //play a round with these choices and increment total score
-        //positive total computer win, neg total player win, 0 is tie
-        count += playRound(comp, playa);
-    }
-    //report winner at end based on total score
-    if (count > 0) {
-        winner = "you";
-    }
-    else if (count < 0) {
-        winner = "computer";
-    }
-    alert(`best of five winner is ${winner}!`);
+    //display winner message 
+    winnerMessage.textContent = `${str.toUpperCase()} WINS!!! final score
+    ---player ${playerScore}---computer ${computerScore}`;
+
+    //reset scores
+    player.textContent = 0;
+    computer.textContent = 0;
+    //reset winning msg 
+    setTimeout(() => { winnerMessage.textContent = 'A SCORE OF 5 WINS THE GAME' }, 4000);
+
 }
-
 
 
 function displayResults(result) {
@@ -66,14 +57,21 @@ function displayResults(result) {
         computerTotal++;
         msg.textContent = "COMPUTER WINS ROUND!";
         computerScore.textContent = computerTotal;
+        if (computerTotal === 5) {
+            endGame("computer");
+        }
     }
+
     else if (result < 0) {
         playerTotal++;
         msg.textContent = "PLAYER WINS ROUND!";
         playerScore.textContent = playerTotal;
+        if (playerTotal === 5) {
+            endGame("player");
+        }
     }
     else {
-        msg.textContent = 'TIE GAME!';
+        msg.textContent = 'ROUND IS A TIE!';
     }
 
 }
