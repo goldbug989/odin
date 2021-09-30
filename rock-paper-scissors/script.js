@@ -5,38 +5,25 @@ function computerPlay() {
     else if (result === 2) return "PAPER";
     else return "SCISSORS";
 }
-//return player choice ..check for valid answer
-function getPlayerChoice() {
-    let validAnswer = false;
-    do {
-        let choice = prompt("choose rock, paper, or scissors");
-        //check choice
-        if (choice.toUpperCase() === "ROCK" || choice.toUpperCase() === "PAPER" || choice.toUpperCase() === "SCISSORS") {
-            validAnswer = true;
-            return choice.toUpperCase();
-        }
-        else {
-            alert("invalid entry..try again");
-        }
-    } while (!validAnswer)
-}
+
 
 //play game
 function playRound(computer, player) {
 
     if (computer === player) {
-        alert(`tie game! both parties chose ${computer}`);
+        //alert(`tie game! both parties chose ${computer}`);
         return 1;
     }
     else if ((computer === "ROCK" && player === "SCISSORS") || (computer === "PAPER" && player === "ROCK") || (computer === "SCISSORS" && player === "PAPER")) {
-        alert(`computer wins! ${computer}(computer) beats ${player}(player)`);
+        //alert(`computer wins! ${computer}(computer) beats ${player}(player)`);
         return -1;
     }
     else {
-        alert(`player wins! ${player}(player) beats ${computer}(computer)`);
+        //alert(`player wins! ${player}(player) beats ${computer}(computer)`);
         return 0;
     }
 }
+
 
 function game() {
     //initialize variabless
@@ -61,5 +48,47 @@ function game() {
     alert(`best of five winner is ${winner}!`);
 }
 
-//play game
-game();
+
+
+function displayResults(result) {
+    console.log(result);
+    //create results div
+    let resultSpan = document.createElement("span");
+
+    //if result =1 computer wins
+    if (result > 0) {
+        resultSpan.textContent = "Computer Wins!!!"
+    }
+    else if (result === 0) {
+        resultSpan.textContent = "Tie Game!!!";
+    }
+    else {
+        resultSpan.textContent = "Player Wins!!";
+    }
+    //add span to result container
+    let container = document.querySelector(".results");
+    container.appendChild(resultSpan);
+}
+
+
+function play(e, str) {
+    //get playerChoice from btn clicked
+    let playerChoice = e.target.textContent.toUpperCase();
+    //erase result container child span if results exist
+    if (document.querySelector(".results").firstElementChild) {
+        document.querySelector(".results").firstElementChild.remove();
+    }
+    let computerChoice = computerPlay();
+    let result = playRound(computerChoice, playerChoice);
+    displayResults(result);
+};
+
+
+let btnRock = document.querySelector("#rock");
+let btnPaper = document.querySelector("#paper");
+let btnScissors = document.querySelector("#scissors");
+
+
+btnRock.addEventListener("click", play);
+btnPaper.addEventListener("click", play);
+btnScissors.addEventListener("click", play);
