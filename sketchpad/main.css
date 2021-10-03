@@ -27,7 +27,7 @@ body{
     height:100%;
     border: 1px solid blue;
 }
-.grid:hover{
+.sketch{
     background-color: black;
 }
 #btnReset{
