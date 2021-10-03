@@ -7,11 +7,14 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-.container{
-    padding:10%;
     height:100vh;
     width:100vw;
+    padding:50px 0px;
+}
+.container{
+    padding:10% 10% 3% 10%;
+    height:80%;
+    width:50%;
     display:flex;
     flex-direction: column;
     justify-content: center;
@@ -29,6 +32,19 @@ body{
 }
 .sketch{
     background-color: black;
+}
+label{
+    height:30px;
+    width:40px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:1em;
+}
+#dimension{
+    width:40px;
+    height:30px;
+    border:1px solid blue;
+    font-size:1em;
+    text-align: center;
 }
 #btnReset{
     color:white;

@@ -3,14 +3,20 @@ let btnReset = document.getElementById('btnReset');
 
 
 btnReset.addEventListener("click", () => {
-    //get grid element
+    //remove sketch
     let grid = document.querySelectorAll(".grid").forEach((item) => {
         item.classList.remove('sketch');
-    })
+    });
+    if (document.getElementById('dimension').value) {
+        createGrid(document.getElementById('dimension').value);
+    };
+
 });
 
 
 function createGrid(length) {
+    //remove current grid
+    container.innerHTML = '';
 
     for (let i = 0; i < length; i++) {
         //create row container
@@ -32,4 +38,4 @@ function createGrid(length) {
 }
 
 
-createGrid(4);
+createGrid(25);
